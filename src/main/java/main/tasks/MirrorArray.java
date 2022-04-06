@@ -35,8 +35,18 @@ public class MirrorArray {
      *      [1, 2, 3, 1]
      */
     public static boolean isMirrorArray(int[] array) {
-        // write your code here
-        return false;
+        boolean isMirrorArray = array.length > 0;
+
+        for (int i = 0; i < array.length / 2; i++) {
+            int iFromEnd = array.length - 1 - i;
+
+            if (array[i] != array[iFromEnd]) {
+                isMirrorArray = false;
+                break;
+            }
+        }
+
+        return isMirrorArray;
     }
 
 }
